@@ -29,11 +29,13 @@ const applicationPublicKey = application?.applicationPublicKey;
 const applicationSecret = application?.applicationSecret;
 
 // Validate environment
-function assert(name, value) {
-  if (!value) throw new Error(`${name} must be set in env.jsonc`);
+function assert(name, value, warn = false) {
+  if (value) return;
+  if (!warn) throw new Error(`${name} must be set in env.jsonc`);
+  console.warn(`Warning: ${name} is not set in env.jsonc. You must set it to interact with Discord.`);
 }
 if (mode === "development") {
-  assert("testServerId", testServerId);
+  assert("testServerId", testServerId, true);
   assert("development.applicationId", applicationId);
   assert("development.applicationPublicKey", applicationPublicKey);
   assert("development.applicationSecret", applicationSecret);

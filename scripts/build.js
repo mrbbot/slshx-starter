@@ -29,13 +29,17 @@ const applicationPublicKey = application?.applicationPublicKey;
 const applicationSecret = application?.applicationSecret;
 
 // Validate environment
-function assert(name, value, warn = false) {
+function assert(name, value, warn = "") {
   if (value) return;
   if (!warn) throw new Error(`${name} must be set in env.jsonc`);
-  console.warn(`Warning: ${name} is not set in env.jsonc. You must set it to interact with Discord.`);
+  console.warn(`⚠️ ${name} is not set in env.jsonc. ${warn}`);
 }
 if (mode === "development") {
-  assert("testServerId", testServerId, true);
+  assert(
+    "testServerId",
+    testServerId,
+    "You must include it to enable automatic reloading of commands."
+  );
   assert("development.applicationId", applicationId);
   assert("development.applicationPublicKey", applicationPublicKey);
   assert("development.applicationSecret", applicationSecret);

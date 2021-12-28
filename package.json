@@ -1,0 +1,19 @@
+{
+  "name": "slshx-starter",
+  "version": "1.0.0",
+  "type": "module",
+  "module": "dist/index.mjs",
+  "private": true,
+  "scripts": {
+    "dev": "miniflare --watch --debug --wrangler-env=development",
+    "deploy:global": "node --no-warnings --experimental-vm-modules scripts/deploy.js"
+  },
+  "dependencies": {
+    "slshx": "^0.1.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.3.0",
+    "esbuild": "^0.14.8",
+    "miniflare": "^2.0.0-rc.4"
+  }
+}

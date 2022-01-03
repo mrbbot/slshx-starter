@@ -25,3 +25,4 @@ main = "./index.mjs"
 kv_persist = true
 cache_persist = true
 durable_objects_persist = true
+global_async_io = true

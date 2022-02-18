@@ -9,11 +9,11 @@
     "deploy:global": "node --no-warnings --experimental-vm-modules scripts/deploy.js"
   },
   "dependencies": {
-    "slshx": "^0.2.0"
+    "slshx": "^0.3.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.3.0",
     "esbuild": "^0.14.8",
-    "miniflare": "^2.1.0"
+    "miniflare": "^2.3.0"
   }
 }

@@ -76,6 +76,7 @@ await build({
   format: "esm",
   logLevel: "info",
   bundle: true,
+  minify: true,
   sourcemap: true,
   jsxFactory: "createElement",
   jsxFragment: "Fragment",

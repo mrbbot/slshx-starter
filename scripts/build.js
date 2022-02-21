@@ -81,6 +81,4 @@ await build({
   jsxFactory: "createElement",
   jsxFragment: "Fragment",
   define,
-  // Required to remove dead-code (e.g. `if (false) { ... }`)
-  minifySyntax: removeDeployCode,
 });

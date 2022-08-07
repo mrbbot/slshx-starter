@@ -1,23 +1,18 @@
 name = "slshx-starter"
-type = "javascript"
+main = "./dist/index.mjs"
 
-account_id = "" # TODO: add your Cloudflare account ID here
 workers_dev = true
 # route = ""
-# zone_id = ""
 
-compatibility_date = "2021-12-27"
+compatibility_date = "2022-08-07"
 compatibility_flags = []
 
 [build]
 command = "node scripts/build.js production"
-[build.upload]
-format = "modules"
-main = "./index.mjs"
 
 [env.development.build]
 command = "node scripts/build.js development"
-[env.development.build.upload]
+[env.development.build.upload] # Required by Miniflare
 format = "modules"
 main = "./index.mjs"
 
@@ -25,4 +20,4 @@ main = "./index.mjs"
 kv_persist = true
 cache_persist = true
 durable_objects_persist = true
-global_async_io = true
+global_async_io = true # Required by Slshx

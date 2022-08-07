@@ -29,6 +29,10 @@ const mf = new Miniflare({
   wranglerConfigPath: true,
   packagePath: true,
   envPath: true,
+  // Manually define script as Miniflare doesn't currently respect top-level
+  // `main` in `wrangler.toml`
+  scriptPath: "dist/index.mjs",
+  modules: true,
   // Build the worker in "deploy" mode, which includes Miniflare-specific
   // deployment code, but uses the production configuration.
   buildCommand: "node scripts/build.js deploy",
